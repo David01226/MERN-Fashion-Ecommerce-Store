@@ -1,14 +1,19 @@
 .newsletter {
-  width: 65%;
+  width: 100%;
+  margin-bottom: 80px;
+  max-width: 1000px;
+}
+
+.newsletter-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: auto;
-  padding: 0 140px;
-  margin-bottom: 140px;
-  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+  background: #fde1ff;
   gap: 30px;
+  padding: 40px 0;
 }
 
 .newsletter h1 {
@@ -23,7 +28,7 @@
   font-size: 20px;
 }
 
-.newsletter div {
+.newsletter-inputs{
   display: flex;
   align-items: center;
   justify-content: space-between;

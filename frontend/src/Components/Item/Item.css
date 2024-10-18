@@ -1,6 +1,11 @@
 .item {
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
   cursor: pointer;
+}
+
+.item img {
+  width: 100%;
 }
 
 .item p {

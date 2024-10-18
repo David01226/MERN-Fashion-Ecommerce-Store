@@ -1,8 +1,13 @@
 .navbar {
-  display: flex;
-  justify-content: space-around;
-  padding: 16px;
+  width: 100%;
   box-shadow: 0 1px 3px -2px black;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
 }
 
 .nav-logo {

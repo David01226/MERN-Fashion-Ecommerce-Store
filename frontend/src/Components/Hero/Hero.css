@@ -1,17 +1,18 @@
 .hero {
-  height: 100vh;
   background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+  margin-bottom: 50px;
+}
+
+.hero-wrapper {
   display: flex;
-  margin-bottom: 80px;
 }
 
 .hero-left {
-  flex: 1;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  padding: 180px;
   line-height: 1.1;
 }
 
@@ -54,9 +55,13 @@
 }
 
 .hero-right {
-  flex: 1;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-right img {
+  width: 90%;
 }
 
