@@ -1,5 +1,6 @@
 .breadcrumb {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   color: #5e5e5e;
@@ -11,5 +12,9 @@
 
 .breadcrumb img {
   width: 6px;
+}
+
+@media(max-width:767px) {
+  .breadcrumb {font-size: 13px};
 }
 

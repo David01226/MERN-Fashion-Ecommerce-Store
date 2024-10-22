@@ -27,6 +27,7 @@
   color: #454545;
   font-size: 20px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .newsletter-inputs{
@@ -34,15 +35,16 @@
   align-items: center;
   justify-content: space-between;
   background: white;
-  width: 730px;
-  height: 70px;
+  width: 100%;
+  max-width: 730px;
   border-radius: 80px;
   border: 1px solid #e3e3e3;
+  overflow: hidden;
 }
 
 .newsletter input {
   width: 500px;
-  margin-left: 30px;
+  padding: 12px 20px;
   border: none;
   outline: none;
   color: #616161;
@@ -52,7 +54,7 @@
 
 .newsletter button {
   width: 210px;
-  height: 70px;
+  height: 52px;
   border-radius: 80px;
   background: black;
   color: white;
@@ -71,5 +73,11 @@
   .newsletter p {
     font-size: 18px;
     margin-bottom: 20px;
+  }
+}
+
+@media(max-width:767px) {
+  .newsletter {
+    margin-bottom: 50px;
   }
 }

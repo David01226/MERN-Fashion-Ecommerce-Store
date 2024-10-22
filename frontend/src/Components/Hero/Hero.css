@@ -39,19 +39,7 @@
 }
 
 .hero-latest-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  width: 310px;
-  height: 70px;
-  border-radius: 75px;
   margin-top: 30px;
-  background: #ff4141;
-  color: #fff;
-  font-size: 22px;
-  font-weight: 500;
-  padding: 16px;
 }
 
 .hero-right {
@@ -79,6 +67,24 @@
 }
 
 @media(max-width:767px) {
-  
+  .hero-wrapper {
+    flex-direction: column-reverse;
+  }
+  .hero-left {
+    width: 100%;
+    gap: 10px;
+  }
+  .hero-right {
+    width: 100%;
+  }
+  .hero-left p {
+    font-size: 36px;
+  }
+  .hero-hand-icon img {
+    width: 38px;
+  }
+  .hero-latest-btn {
+    margin-top: 18px;
+  }
 }
 

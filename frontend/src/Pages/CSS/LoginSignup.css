@@ -65,3 +65,18 @@
   font-size: 18px;
   font-weight: 500;
 }
+
+@media(max-width:1024px) {
+  .loginsignup {
+    padding: 50px 0;
+  }
+  .loginsignup-container h1 {
+    margin: 0 0 20px 0;
+  }
+}
+
+@media(max-width:767px) {
+  .loginsignup-container {
+    padding: 30px 20px 40px;
+  }
+}

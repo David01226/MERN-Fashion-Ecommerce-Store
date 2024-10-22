@@ -29,6 +29,7 @@
 
 .footer-link li {
   cursor: pointer;
+  text-align: center;
 }
 
 .footer-social-icons {
@@ -54,6 +55,11 @@
   font-size: 20px;
 }
 
+.footer-copyright p {
+  text-align: center;
+}
+
+
 .footer-copyright hr {
   width: 100%;
   border: none;
@@ -68,5 +74,15 @@
   }
   .footer-logo img {
     max-width: 60px;
+  }
+}
+
+@media(max-width:767px) {
+  .footer-link {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer {
+    gap: 30px;
   }
 }

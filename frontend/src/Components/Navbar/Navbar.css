@@ -33,7 +33,7 @@
 }
 
 .nav-menu {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   list-style: none;
@@ -42,7 +42,6 @@
   font-size: 20px;
   font-weight: 500;
   padding-inline-start: 0;
-  border-bottom: 1px solid lightgrey;
 }
 
 .nav-menu li{
@@ -159,6 +158,7 @@
     display: flex;
   }
   .nav-menu {
+    display: none;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -177,11 +177,36 @@
 
   .nav-menu.nav-menu-visible {
     display: flex;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
   }
 }
 
 @media(max-width:767px) {
   .nav-menu {
     flex-direction: column;
+    gap: 30px;
+  }
+  .nav-login-cart {
+    gap: 2px;
+  }
+  .nav-logo img {
+    max-width: 36px;
+  }
+  .nav-logo p {
+    font-size: 20px;
+  }
+  .account-icon-wrapper {
+    width: 35px;
+  }
+  .nav-cart-icon {
+    width: 32px;
+  }
+  .hamburger-menu {
+    width: 28px;
+    height: 30px;
+  }
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
   }
 }

@@ -37,19 +37,7 @@
   color: #171717;
   font-size: 22px;
   font-weight: 600;
-}
-
-.offers-left button {
-  width: 282px;
-  height: 72px;
-  border-radius: 35px;
-  background: #ff4141;
-  border: none;
-  color: white;
-  font-size: 22px;
-  font-weight: 500;
-  margin-top: 30px;
-  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .offers-right {
@@ -67,5 +55,34 @@
   }
   .offers-left p {
     font-size: 20px;
+  }
+}
+
+@media(max-width:767px) {
+  .offers-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+  }
+  .offers-left {
+    width: 100%;
+  }
+  .offers-right {
+    width: 100%;
+  }
+  .offers-left-wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .offers-left h1 {
+    color: #171717;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 0.8;
+    margin-bottom: 20px;
+  }
+  .offers-right img {
+    width: 60%;
   }
 }
