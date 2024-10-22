@@ -65,3 +65,20 @@
   width: 90%;
 }
 
+@media(max-width:1024px) {
+  .hero-hand-icon img {
+    width: 54px;
+  }
+  .hero-left p {
+    font-size: 6vw;
+  }
+
+  .hero-left h2 {
+    font-size: 20px;
+  }
+}
+
+@media(max-width:767px) {
+  
+}
+

@@ -9,7 +9,7 @@
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .footer-logo p {
@@ -24,6 +24,7 @@
   gap: 50px;
   color: #252525;
   font-size: 20px;
+  padding-inline-start: 0;
 }
 
 .footer-link li {
@@ -39,6 +40,7 @@
   padding: 10px 10px 6px;
   background: #fbfbfb;
   border: 1px solid #ebebeb;
+  cursor: pointer;
 }
 
 .footer-copyright {
@@ -58,4 +60,13 @@
   border-radius: 10px;
   height: 3px;
   background: #c7c7c7;
+}
+
+@media(max-width:1024px) {
+  .footer-logo p {
+    font-size: 30px;
+  }
+  .footer-logo img {
+    max-width: 60px;
+  }
 }

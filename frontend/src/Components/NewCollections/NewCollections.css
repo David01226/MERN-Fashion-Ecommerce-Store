@@ -6,7 +6,7 @@
   margin-bottom: 80px;
 }
 
-.new-collections h1 {
+.new-collections h2 {
   color: #171717;
   font-size: 50px;
   font-weight: 600;
@@ -24,4 +24,14 @@
   grid-template-columns: repeat(4, 1fr);
   margin: 50px 0 0;
   gap: 30px;
+}
+
+@media(max-width:1024px) {
+  .new-collections h2 {
+    font-size: 32px;
+  }
+
+  .collections {
+    margin: 20px 0 0;
+  }
 }

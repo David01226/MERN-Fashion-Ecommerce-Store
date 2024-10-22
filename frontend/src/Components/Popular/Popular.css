@@ -6,7 +6,7 @@
   margin-bottom: 80px;
 }
 
-.popular h1 {
+.popular h2 {
   color: #171717;
   font-size: 50px;
   font-weight: 600;
@@ -24,4 +24,15 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+}
+
+@media(max-width:1024px) {
+  .popular h2 {
+    font-size: 32px;
+  }
+
+  .popular-item {
+    margin-top: 20px;
+    gap: 20px;
+  }
 }
