@@ -36,7 +36,7 @@ const CartItems = () => {
       <div className="cartitems-down">
         <div className="cartitems-total">
           <h2>Cart Totals</h2>
-          <div>
+          <div className="cartitems-total-grid">
             <div className="cartitems-total-item">
               <p>Subtotal</p>
               <p>${getTotalCartAmount()}</p>

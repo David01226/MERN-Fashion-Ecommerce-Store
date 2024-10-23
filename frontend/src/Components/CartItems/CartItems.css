@@ -99,3 +99,27 @@
   color: white;
   cursor: pointer;
 }
+
+.cartitems-total-grid {
+  width: 100%;
+}
+
+@media(max-width:1024px) {
+  .cartitems-format-main {
+    gap: 15px;
+  }
+  .cartitems-down {
+    flex-direction: column-reverse;
+    gap: 40px;
+    margin-top: 40px;
+    align-items: flex-end;
+  }
+  .cartitems-total {
+    margin: 0;
+    width: 100%;
+    align-items: flex-end;
+  }
+}
+@media(max-width:767px) {
+  
+}

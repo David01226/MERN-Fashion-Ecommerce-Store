@@ -43,6 +43,7 @@ a {
   font-size: 20px;
   font-weight: 600;
   border: 2px solid #ff4141;
+  cursor: pointer;
 }
 
 @media(max-width:767px) {
