@@ -29,6 +29,7 @@
     max-width: none;
     height: auto;
     justify-content: center;
+    gap: 12px;
   }
   .sidebar-item {
     margin: 0;
