@@ -182,6 +182,31 @@ app.post("/signup", async (req, res) => {
 })
 
 
+// LOGIN USER ENDPOINT API
+app.post("/login", async (req, res) => {
+  //Attempt to find the user by email from the request body
+  let user = await Users.findOne({email: req.body.email});
+  //If user exists, check the password matches
+  if (user) {
+    const passCompare = req.body.password === user.password;
+    // if password matches then create a JWT for authentication and return the JWT in the response
+    if (passCompare) {
+      const data = {
+        user: {
+          id: user.id
+        }
+      }
+      const token = jwt.sign(data, 'secret_ecom')
+      res.json({success: true, token})
+    } else {
+      res.json({success: false, errors: "Wrong Password"})
+    }
+  } else {
+    res.json({success: false, errors: "Wrong Email ID"})
+  }
+})
+
+
 app.listen(port, (error)=>{
   if (!error) {
     console.log("Server Running on port" + port)
