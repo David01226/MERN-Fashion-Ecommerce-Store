@@ -37,6 +37,10 @@ export const Navbar = () => {
           <li onClick={()=>{setMenu("kids")}}><Link to='/kids'>Kids</Link> {menu === "kids" ? <hr/> : <></>}</li>
         </ul>
         <div className="nav-login-cart">
+          {localStorage.getItem('auth-token')
+          ?
+          <button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
+          :
           <Link to='/login'>
           <div className="account-icon-wrapper">
             <svg className="account-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -45,6 +49,7 @@ export const Navbar = () => {
             </svg>
           </div>
           </Link>
+          }
           <Link to='/cart'>
             <img className="nav-cart-icon" src={cart_icon} alt="" />
             <div className="nav-cart-count">{getTotalCartItems()}</div>

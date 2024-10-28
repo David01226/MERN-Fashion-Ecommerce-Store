@@ -186,6 +186,7 @@ app.post("/signup", async (req, res) => {
 app.post("/login", async (req, res) => {
   //Attempt to find the user by email from the request body
   let user = await Users.findOne({email: req.body.email});
+  console.log(user)
   //If user exists, check the password matches
   if (user) {
     const passCompare = req.body.password === user.password;
@@ -204,6 +205,15 @@ app.post("/login", async (req, res) => {
   } else {
     res.json({success: false, errors: "Wrong Email ID"})
   }
+})
+
+
+// GET NEW COLLECTION DATA API ENDPOINT
+app.get('/newcollection', async (req, res) => {
+  let products = await Product.find({});
+  let newcollection = products.slice(1).slice(-8);
+  console.log("NewCollection Fetched")
+  res.send(newcollection)
 })
 
 
