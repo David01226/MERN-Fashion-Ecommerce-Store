@@ -22,7 +22,6 @@ const AddProduct = () => {
   }
 
   const addProduct = async () => {
-    console.log(productDetails)
     let responseData;
     let product = productDetails;
 

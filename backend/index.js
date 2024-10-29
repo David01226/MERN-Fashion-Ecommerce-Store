@@ -1,4 +1,6 @@
-const port = 4000;
+// dotenv package attaches environment variables to the 'process' object so we can reference them
+require('dotenv').config()
+const port = process.env.PORT;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -8,11 +10,9 @@ const path = require("path") // gives access to backend directory in express app
 const cors = require("cors");
 const { type } = require("os");
 
+
 app.use(express.json());
 app.use(cors());
-
-// Database Connection MongoDB
-mongoose.connect("mongodb+srv://DavidGibson:testpassword123@cluster0.lanti.mongodb.net/e-commerce");
 
 // API Creation
 app.get("/", (req,res) => {
@@ -270,10 +270,14 @@ app.post('/getcart', fetchUser, async (req, res) => {
 })
 
 
-app.listen(port, (error)=>{
-  if (!error) {
-    console.log("Server Running on port" + port)
-  } else {
-    console.log("Error: " + error)
-  }
-})
+// connect to database
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    // start listening for requests only once connected to DB
+    app.listen(port, () => {
+      console.log('connected to database & listening on port', port)
+    })
+  })
+  .catch((error) => {
+    console.log(error)
+  })

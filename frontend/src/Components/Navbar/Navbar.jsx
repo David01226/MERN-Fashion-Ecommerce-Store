@@ -39,7 +39,7 @@ export const Navbar = () => {
         <div className="nav-login-cart">
           {localStorage.getItem('auth-token')
           ?
-          <button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
+          <button className="nav-logout" onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
           :
           <Link to='/login'>
           <div className="account-icon-wrapper">
