@@ -262,7 +262,12 @@ app.post('/removefromcart', fetchUser, async (req, res) => {
   }
 })
 
-
+// Get user cartData
+app.post('/getcart', fetchUser, async (req, res) => {
+  console.log('Get Cart', req.body.itemId);
+  let userData = await Users.findOne({_id: req.user.id})
+  res.json(userData.cartData)
+})
 
 
 app.listen(port, (error)=>{
