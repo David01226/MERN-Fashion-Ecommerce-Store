@@ -12,7 +12,8 @@ const CartItems = () => {
 
   return (
       <div className="cartitems page-width">
-      <div className="cartitems-format-main">
+      <h1 className="cartitems-title">Cart</h1>
+      <div className="cartitems-format-main cartitems-labels">
         <p>Products</p>
         <p>Title</p>
         <p>Price</p>

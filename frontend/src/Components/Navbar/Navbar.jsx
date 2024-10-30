@@ -13,8 +13,13 @@ export const Navbar = () => {
 
   const dropdown_toggle = (e) => {
     menuRef.current.classList.toggle('nav-menu-visible');
-    e.target.closest('.hamburger-menu').classList.toggle('open');
+    document.querySelector('.hamburger-menu').classList.toggle('open');
   }
+
+  const handleMenuClick = (menuName) => {
+    setMenu(menuName);
+    dropdown_toggle();
+  };
 
   return (
     <div className="navbar">
@@ -31,10 +36,10 @@ export const Navbar = () => {
           <div className="bar"></div>
         </div>
         <ul ref={menuRef} className="nav-menu">
-          <li onClick={()=>{setMenu("shop")}}><Link to='/'>Shop</Link> {menu === "shop" ? <hr/> : <></>}</li>
-          <li onClick={()=>{setMenu("mens")}}><Link to='/mens'>Men</Link> {menu === "mens" ? <hr/> : <></>}</li>
-          <li onClick={()=>{setMenu("womens")}}><Link to='/womens'>Women</Link> {menu === "womens" ? <hr/> : <></>}</li>
-          <li onClick={()=>{setMenu("kids")}}><Link to='/kids'>Kids</Link> {menu === "kids" ? <hr/> : <></>}</li>
+          <li onClick={()=>{handleMenuClick("shop")}}><Link to='/'>Shop</Link> {menu === "shop" ? <hr/> : <></>}</li>
+          <li onClick={()=>{handleMenuClick("mens")}}><Link to='/mens'>Men</Link> {menu === "mens" ? <hr/> : <></>}</li>
+          <li onClick={()=>{handleMenuClick("womens")}}><Link to='/womens'>Women</Link> {menu === "womens" ? <hr/> : <></>}</li>
+          <li onClick={()=>{handleMenuClick("kids")}}><Link to='/kids'>Kids</Link> {menu === "kids" ? <hr/> : <></>}</li>
         </ul>
         <div className="nav-login-cart">
           {localStorage.getItem('auth-token')

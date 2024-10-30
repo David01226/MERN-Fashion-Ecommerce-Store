@@ -16,7 +16,7 @@ const LoginSignup = () => {
   const login = async () => {
     console.log("Login", formData)
     let responseData;
-    await fetch('http://localhost:4000/login', {
+    await fetch(`${process.env.REACT_APP_API_URL}/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/formData',
@@ -37,7 +37,7 @@ const LoginSignup = () => {
   const signup = async () => {
     console.log("Signup", formData)
     let responseData;
-    await fetch('http://localhost:4000/signup', {
+    await fetch(`${process.env.REACT_APP_API_URL}/signup`, {
       method: 'POST',
       headers: {
         Accept: 'application/formData',
@@ -70,10 +70,10 @@ const LoginSignup = () => {
           {state==="Sign Up"?<p className="loginsignup-login">Already have an account? <span onClick={()=>{setState("Login")}}>Login here</span></p>
           : <p className="loginsignup-login">Create an account? <span onClick={()=>{setState("Sign Up")}}>Click here</span></p>
           }
-          <div className="loginsignup-agree">
+          {/* <div className="loginsignup-agree">
             <input type="checkbox" name="terms" id="terms" />
             <label htmlFor="terms">By continuing, I agree to the terms of the use & privacy policy.</label>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

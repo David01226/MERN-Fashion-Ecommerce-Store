@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
-  box-shadow: 0 1px 3px -2px black;
   position: relative;
+  box-shadow: 5px 5px 10px #d3d3d336;
 }
 
 .navbar-wrapper {
@@ -50,7 +50,7 @@
   align-items: center;
   justify-content: center;
   gap: 3px;
-  cursor: pointers;
+  cursor: pointer;
 }
 
 .nav-menu hr{
@@ -58,7 +58,7 @@
   width: 80%;
   height: 3px;
   border-radius: 10px;
-  background-color: #FF4141;
+  background-color: #E04E52;
 }
 
 .nav-login-cart {
@@ -103,7 +103,7 @@
   align-items: center;
   border-radius: 11px;
   font-size: 14px;
-  background: red;
+  background: #ff5a5a;
   color: white;
 }
 
@@ -222,5 +222,14 @@
   }
   .hamburger-menu.open .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
+  }
+  .nav-logout {
+    padding: 4px;
+    font-size: 10px;
+  }
+  .nav-cart-count {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
   }
 }

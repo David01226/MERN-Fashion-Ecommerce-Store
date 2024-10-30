@@ -7,7 +7,8 @@
   width: 100%;
   display: flex;
   margin: auto;
-  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+  background: linear-gradient(180deg, #fde3e3 0%, #e1ffea22 60%);
+  box-shadow: 5px 5px 10px #d3d3d336;
 }
 
 .offers-left {
@@ -27,7 +28,7 @@
 
 .offers-left h1 {
   color: #171717;
-  font-size: 5vw;
+  font-size: 70px;
   font-weight: 600;
   line-height: 0.8;
   margin-bottom: 20px;
@@ -72,7 +73,7 @@
   }
   .offers-left-wrapper {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px 40px;
   }
 
   .offers-left h1 {

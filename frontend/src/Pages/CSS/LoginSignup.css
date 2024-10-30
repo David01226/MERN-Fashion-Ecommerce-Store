@@ -1,6 +1,6 @@
 .loginsignup {
   width: 100%;
-  background: #fce3fe;
+  background: #fde3e3;
   padding: 100px 0;
   margin-bottom: 80px;
 }
@@ -36,7 +36,7 @@
   width: 100%;
   height: 72px;
   color: white;
-  background-color: #ff4141;
+  background-color: #E04E52;
   margin-top: 30px;
   border: none;
   font-size: 24px;
@@ -52,18 +52,24 @@
 }
 
 .loginsignup-login span{
-  color: #ff4141;
+  color: #E04E52;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .loginsignup-agree {
   display: flex;
   align-items: center;
   margin-top: 25px;
-  gap: 20px;
+  gap: 15px;
   color: #5c5c5c;
   font-size: 18px;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.loginsignup-agree label{
+  cursor: pointer;
 }
 
 @media(max-width:1024px) {
