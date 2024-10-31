@@ -26,8 +26,6 @@ const userRoutes = require('./routes/user')
 app.use('/', productRoutes)
 app.use('/', userRoutes)
 
-
-
 // Image Storage Engine
 const storage = multer.diskStorage({
   destination: "./upload/images",
@@ -46,70 +44,6 @@ app.post("/upload", upload.single("product"), (req, res) => {
     success: 1,
     image_url: `${process.env.REACT_APP_API_URL}/images/${req.file.filename}`
   })
-})
-
-
-
-
-
-// REGISTER USER API ENDPOINT
-app.post("/signup", async (req, res) => {
-  // check if existing user
-  let check = await Users.findOne({email: req.body.email})
-  if (check) {
-    return res.status(400).json({success: false, errors:"existing user found with same email address"})
-  }
-
-  // if user doesn't exist create the empty cart state
-  let cart = {};
-  for (let i = 0; i < 300; i++) {
-    cart[i]=0;
-  }
-  //create the user
-  const user = new Users({
-    name: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-    cartData: cart,
-  })
-  //save user to mongo DB
-  await user.save();
-
-  // create token using data object
-  const data = {
-    user: {
-      id: user.id
-    }
-  }
-  // create token padding data and salt
-  const token = jwt.sign(data, 'secret_ecom');
-  res.json({success: true, token})
-})
-
-
-// LOGIN USER ENDPOINT API
-app.post("/login", async (req, res) => {
-  //Attempt to find the user by email from the request body
-  let user = await Users.findOne({email: req.body.email});
-  console.log(user)
-  //If user exists, check the password matches
-  if (user) {
-    const passCompare = req.body.password === user.password;
-    // if password matches then create a JWT for authentication and return the JWT in the response
-    if (passCompare) {
-      const data = {
-        user: {
-          id: user.id
-        }
-      }
-      const token = jwt.sign(data, 'secret_ecom')
-      res.json({success: true, token})
-    } else {
-      res.json({success: false, errors: "Wrong Password"})
-    }
-  } else {
-    res.json({success: false, errors: "Wrong Email ID"})
-  }
 })
 
 // connect to database

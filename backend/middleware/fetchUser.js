@@ -7,7 +7,7 @@ const fetchUser = async (req, res, next) => {
     res.status(401).send({errors: "Please authenticate using valid token"})
   } else {
     try {
-      const data = jwt.verify(token, 'secret_ecom');
+      const data = jwt.verify(token, process.env.JWT_SALT);
       req.user = data.user;
       next();
     } catch (error) {

@@ -3,7 +3,9 @@ const fetchUser = require('../middleware/fetchUser');
 const { 
   addToCart,
   removeFromCart,
-  getUsersCart
+  getUsersCart,
+  userSignup,
+  userLogin
 } = require('../controllers/userController')
 
 // instance of express router
@@ -19,6 +21,12 @@ router.post('/removefromcart', fetchUser, removeFromCart)
 
 // GET the users cart
 router.post('/getcart', fetchUser, getUsersCart)
+
+// Register a user
+router.post('/signup', userSignup)
+
+// Login a user
+router.post('/login', userLogin)
 
 
 
