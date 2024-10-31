@@ -26,14 +26,12 @@ const ShopContextProvider = (props) => {
         console.error('Error fetching products:', error);
       }
     };
-
+    
     fetchAllProducts();
-    fetchCartItems()
   }, [])
 
-
+  /* eslint-disable react-hooks/exhaustive-deps */
   const fetchCartItems = async () => {
-    // if user logged in then fetch users cart
     if (localStorage.getItem('auth-token')) {
       try {
         const res = await fetch(`${process.env.REACT_APP_API_URL}/getcart`, {
@@ -50,19 +48,20 @@ const ShopContextProvider = (props) => {
       } catch (error) {
         console.error('Error fetching cart items:', error);
       }
-      // else if no user and no guest cart already set up then set one up
     } else {
       if (!localStorage.getItem('noUserCart')) {
-        console.log('fetch no user cart')
+        console.log('fetch no user cart');
         localStorage.setItem('noUserCart', JSON.stringify(cartItems));
-        // but if a guest cart already in local storage then use that
       } else {
         setCartItems(JSON.parse(localStorage.getItem('noUserCart')));
       }
     }
   };
 
-
+  useEffect(() => {
+    fetchCartItems();
+  }, []);
+  /* eslint-disable react-hooks/exhaustive-deps */
 
   const addToCart = (itemId) => {  
     // if there is a user update the users cart
