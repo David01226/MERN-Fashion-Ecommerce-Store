@@ -10,6 +10,7 @@ export const Navbar = () => {
   const [menu, setMenu] = useState("shop")
   const {getTotalCartItems} = useContext(ShopContext)
   const menuRef = useRef();
+  const totalCartItems = getTotalCartItems()
 
   const dropdown_toggle = (e) => {
     menuRef.current.classList.toggle('nav-menu-visible');
@@ -57,7 +58,12 @@ export const Navbar = () => {
           }
           <Link to='/cart'>
             <img className="nav-cart-icon" src={cart_icon} alt="" />
+            {totalCartItems>0 ? 
             <div className="nav-cart-count">{getTotalCartItems()}</div>
+            :
+            <></>
+            }
+            
           </Link>
         </div>
       </div>

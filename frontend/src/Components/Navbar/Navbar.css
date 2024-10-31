@@ -28,7 +28,7 @@
 
 .nav-logo p {
   color: #171717;
-  font-size: 38px;
+  font-size: 28px;
   font-weight: 600;
 }
 
@@ -39,7 +39,7 @@
   list-style: none;
   gap: 50px;
   color: #626262;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 500;
   padding-inline-start: 0;
 }
@@ -76,7 +76,7 @@
 }
 
 .account-icon-wrapper {
-  width: 45px;
+  width: 36px;
   height: auto;
   display: flex;
   justify-content: center;
@@ -90,6 +90,10 @@
 
 .nav-login-cart button:active{
   background: #f3f3f3;
+}
+
+.nav-cart-icon {
+  width: 35px;
 }
 
 .nav-cart-count {
@@ -149,6 +153,12 @@
 
 .hamburger-menu.open .bar:nth-child(3) {
   transform: translateY(-12px) rotate(-45deg);
+}
+
+@media(min-width:768px) {
+  .nav-menu li:has(hr){
+    margin-top: 6px;
+  }
 }
 
 @media(max-width:1024px) {

@@ -10,6 +10,10 @@
   text-transform: capitalize;
 }
 
+.breadcrumb a{
+  color: #5e5e5e;
+}
+
 .breadcrumb img {
   width: 6px;
 }
