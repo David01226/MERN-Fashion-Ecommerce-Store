@@ -140,5 +140,8 @@
   .productdisplay-left {
     gap: 10px;
   }
+  .productdisplay-right h1 {
+    font-size: 28px;
+  }
 }
 
