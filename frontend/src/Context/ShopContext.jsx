@@ -15,17 +15,22 @@ const ShopContextProvider = (props) => {
   const[allProduct, setAllProduct] = useState([]);
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
-  useEffect(() => {
-      const fetchAllProducts = async () => {
-        try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}/allproducts`);
-          const data = await res.json();
-          setAllProduct(data);
-        } catch (error) {
-          console.error('Error fetching products:', error);
-        }
-      };
 
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      try {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/allproducts`);
+        const data = await res.json();
+        setAllProduct(data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+    
+    fetchAllProducts();
+  }, [])
+
+  useEffect(() => {
       const fetchCartItems = async () => {
         // if user logged in then fetch users cart
         if (localStorage.getItem('auth-token')) {
@@ -56,7 +61,6 @@ const ShopContextProvider = (props) => {
         }
       };
 
-      fetchAllProducts();
       fetchCartItems();
   }, [])
 
