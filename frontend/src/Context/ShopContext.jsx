@@ -58,7 +58,7 @@ const ShopContextProvider = (props) => {
 
       fetchAllProducts();
       fetchCartItems();
-  }, [cartItems])
+  }, [])
 
   const addToCart = (itemId) => {  
     // if there is a user update the users cart
