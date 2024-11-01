@@ -31,7 +31,7 @@ export const Navbar = () => {
     <div className="navbar">
       <div className="navbar-wrapper page-width">
           <div className="nav-logo">
-            <Link to='/'>
+            <Link onClick={()=>{handleMenuClick("shop")}} to='/'>
               <img src={logo} alt="" />
               <p>SHOPPER</p>
             </Link>
@@ -52,7 +52,7 @@ export const Navbar = () => {
           ?
           <button className="nav-logout" onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
           :
-          <Link to='/login'>
+          <Link onClick={()=>{handleMenuClick("login")}} to='/login'>
           <div className="account-icon-wrapper">
             <svg className="account-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="7" r="4"></circle>
@@ -61,7 +61,7 @@ export const Navbar = () => {
           </div>
           </Link>
           }
-          <Link to='/cart'>
+          <Link onClick={()=>{handleMenuClick("cart")}} to='/cart'>
             <img className="nav-cart-icon" src={cart_icon} alt="" />
             {totalCartItems>0 ? 
             <div className="nav-cart-count">{getTotalCartItems()}</div>
